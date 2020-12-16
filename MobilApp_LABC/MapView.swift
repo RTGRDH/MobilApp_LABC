@@ -7,9 +7,24 @@
 
 import SwiftUI
 import MapKit
-struct MapView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct MapView: UIViewRepresentable{
+    var locationManager = CLLocationManager()
+    func setupManager() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func makeUIView(context: Context) -> MKMapView {
+        setupManager()
+        let mapView = MKMapView(frame: UIScreen.main.bounds)
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+        return mapView
+    }
+    
+    func updateUIView(_ uiView: MKMapView, context: Context) {
     }
 }
 

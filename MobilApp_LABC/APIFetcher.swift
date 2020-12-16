@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+func fetchFromApi() -> Void{
+    
+}
