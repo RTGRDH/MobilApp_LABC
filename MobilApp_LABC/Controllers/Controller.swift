@@ -21,6 +21,12 @@ class Controller: ObservableObject{
     
     @objc func notificationUpdate() -> Void{
         let data = API.getResult()
-        PAutomater = data
+        updateData(data: data)
+    }
+    
+    private func updateData(data: [PAutomat]){
+        DispatchQueue.main.async{
+            self.PAutomater = data
+        }
     }
 }
