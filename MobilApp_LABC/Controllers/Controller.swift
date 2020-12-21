@@ -9,7 +9,7 @@ import Foundation
 
 class Controller: ObservableObject{
     let API = fetchFunctions()
-    @Published var PAutomater: [PAutomat] = []
+    @Published private var PAutomater: [PAutomat] = []
     private let myNotificationKey = "se.challberg.myNotificationKey"
     init(){
         NotificationCenter.default.addObserver(self, selector: #selector(Controller.notificationUpdate), name: NSNotification.Name(rawValue: myNotificationKey), object: nil)
@@ -17,6 +17,10 @@ class Controller: ObservableObject{
     
     func fetch(){
         API.fetchFromApi()
+    }
+    
+    func getAutomater() -> [PAutomat]{
+        return PAutomater
     }
     
     @objc func notificationUpdate() -> Void{
