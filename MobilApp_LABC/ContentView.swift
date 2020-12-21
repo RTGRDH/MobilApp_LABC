@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var controller = Controller()
     @State var automater: [PAutomat] = []
     var body: some View {
         VStack{
@@ -27,7 +28,7 @@ struct ContentView: View {
         .ignoresSafeArea()
         Spacer()
         Button("I have parked"){
-            fetchFromApi()
+            controller.fetch()
         }
             .font(.largeTitle)
             .foregroundColor(.green)

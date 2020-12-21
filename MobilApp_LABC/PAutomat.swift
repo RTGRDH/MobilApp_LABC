@@ -9,15 +9,15 @@ import Foundation
 import MapKit
 
 final class PAutomat: NSObject, MKAnnotation{
-    let title: String?
-    let zon: String?
+    let adress: String?
+    let status: String?
     let pris: Double?
     let coordinate: CLLocationCoordinate2D
   
-    init(title: String?, coordinate: CLLocationCoordinate2D?, zon: String?, pris: Double?) {
-        self.title = title
+    init(adress: String?, coordinate: CLLocationCoordinate2D?, status: String?, pris: Double?) {
+        self.adress = adress
         self.coordinate = coordinate!
-        self.zon = zon
+        self.status = status
         self.pris = pris
     }
 }

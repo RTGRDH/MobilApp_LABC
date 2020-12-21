@@ -6,10 +6,21 @@
 //
 
 import Foundation
-import CoordinateTransformationLibrary
 
-func test() -> Void{
-    let pos = SWEREF99Position(n: 6580534.000011, e: 150531.999244, projection: SWEREF99Position.SWEREF99Projection.sweref_99_18_00)
-    let x = pos.toWGS84()
-    print(x)
+class Controller: ObservableObject{
+    let API = fetchFunctions()
+    @Published var PAutomater: [PAutomat] = []
+    private let myNotificationKey = "se.challberg.myNotificationKey"
+    init(){
+        NotificationCenter.default.addObserver(self, selector: #selector(Controller.notificationUpdate), name: NSNotification.Name(rawValue: myNotificationKey), object: nil)
+    }
+    
+    func fetch(){
+        API.fetchFromApi()
+    }
+    
+    @objc func notificationUpdate() -> Void{
+        let data = API.getResult()
+        PAutomater = data
+    }
 }
