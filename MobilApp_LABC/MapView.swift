@@ -8,6 +8,7 @@
 import SwiftUI
 import MapKit
 struct MapView: UIViewRepresentable{
+    var automater:[PAutomat]
     var locationManager = CLLocationManager()
     func setupManager() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -25,12 +26,11 @@ struct MapView: UIViewRepresentable{
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        
+        uiView.addAnnotations(automater)
     }
 }
 
 struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
+    static var previews: some View {        MapView(automater: [])
     }
 }
