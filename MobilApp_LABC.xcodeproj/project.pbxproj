@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6972E8132590F480000BD3A5 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E8122590F480000BD3A5 /* Map.swift */; };
 		6972E820259103F6000BD3A5 /* PAutomatStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */; };
 		69B022C2259128F3006EFAAA /* CoordinateTransformationLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 69B022C1259128F3006EFAAA /* CoordinateTransformationLibrary */; };
 		A7BCD27C258A318F00CB62C6 /* MobilApp_LABCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */; };
@@ -42,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6972E8122590F480000BD3A5 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAutomatStruct.swift; sourceTree = "<group>"; };
 		A7BCD278258A318F00CB62C6 /* MobilApp_LABC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilApp_LABC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilApp_LABCApp.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				A7BCD2A9258A320C00CB62C6 /* MapView.swift */,
 				A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */,
 				A7BCD27D258A318F00CB62C6 /* ContentView.swift */,
-				6972E8122590F480000BD3A5 /* Map.swift */,
 				A7BCD2BE258A333800CB62C6 /* PAutomat.swift */,
 				6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */,
 				A7BCD2CA258A33A000CB62C6 /* APIFetcher.swift */,
@@ -314,7 +311,6 @@
 				A7BCD27E258A318F00CB62C6 /* ContentView.swift in Sources */,
 				A7BCD2AA258A320C00CB62C6 /* MapView.swift in Sources */,
 				A7BCD2CB258A33A000CB62C6 /* APIFetcher.swift in Sources */,
-				6972E8132590F480000BD3A5 /* Map.swift in Sources */,
 				A7BCD27C258A318F00CB62C6 /* MobilApp_LABCApp.swift in Sources */,
 				6972E820259103F6000BD3A5 /* PAutomatStruct.swift in Sources */,
 			);

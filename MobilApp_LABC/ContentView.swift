@@ -14,7 +14,7 @@ struct ContentView: View {
             Text("ParkMate")
                 .foregroundColor(.black)
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-            Map()
+            MapView()
                 .clipShape(Circle())
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
@@ -26,7 +26,9 @@ struct ContentView: View {
         .background(Color.pink)
         .ignoresSafeArea()
         Spacer()
-        Button("I have parked", action: fetchFromApi)
+        Button("I have parked"){
+            fetchFromApi()
+        }
             .font(.largeTitle)
             .foregroundColor(.green)
     }

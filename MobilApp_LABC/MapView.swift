@@ -8,7 +8,6 @@
 import SwiftUI
 import MapKit
 struct MapView: UIViewRepresentable{
-    var automater = 0
     var locationManager = CLLocationManager()
     func setupManager() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -26,7 +25,7 @@ struct MapView: UIViewRepresentable{
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        uiView.addAnnotation(automater as! MKAnnotation)
+        
     }
 }
 
