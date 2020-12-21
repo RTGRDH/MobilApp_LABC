@@ -24,14 +24,13 @@ struct ContentView: View {
                 .foregroundColor(.black)
                 .padding()
         }
-        .background(Color.pink)
-        .ignoresSafeArea()
+        .background(Color(red: 245/255, green: 1/255, blue: 121/255).opacity(0.5))
         Spacer()
         Button("I have parked"){
             controller.fetch()
         }
             .font(.largeTitle)
-            .foregroundColor(.green)
+            .foregroundColor(Color(red: 12/255, green: 245/255, blue: 145/255))
     }
 }
 

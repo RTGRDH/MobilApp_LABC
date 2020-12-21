@@ -41,7 +41,7 @@ class fetchFunctions{
                         //let test = CLLocation(latitude: 59.337193842903424
                                               //, longitude: 17.9386777235112)
                         let automat = CLLocation(latitude: automatPosWGS84.latitude, longitude: automatPosWGS84.longitude)
-                        if(myLocation.distance(from: automat) < 1000){
+                        if(myLocation.distance(from: automat) < .infinity){
                             let naraAutomat = PAutomat(adress: feature.properties.adressbeskrivning, coordinate: CLLocationCoordinate2D(latitude: automat.coordinate.latitude, longitude: automat.coordinate.longitude), status: feature.properties.status.rawValue, pris: 100)
                             resultFromApi.append(naraAutomat)
                         }
