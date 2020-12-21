@@ -11,18 +11,23 @@ struct ContentView: View {
     var body: some View {
         VStack{
             Text("ParkMate")
-            MapView()
+                .foregroundColor(.black)
+                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            Map()
                 .clipShape(Circle())
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                 .frame(width: 200, height: 200)
             Divider()
                 .foregroundColor(.black)
+                .padding()
         }
+        .background(Color.pink)
+        .ignoresSafeArea()
         Spacer()
-        Button("Fetch API", action: fetchFromApi)
-        Text("Hello, world!")
-            .padding()
+        Button("I have parked", action: fetchFromApi)
+            .font(.largeTitle)
+            .foregroundColor(.green)
     }
 }
 
