@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var automater: [PAutomat] = []
     var body: some View {
         VStack{
             Text("ParkMate")

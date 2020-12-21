@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6972E8132590F480000BD3A5 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E8122590F480000BD3A5 /* Map.swift */; };
 		6972E820259103F6000BD3A5 /* PAutomatStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */; };
+		69B022C2259128F3006EFAAA /* CoordinateTransformationLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 69B022C1259128F3006EFAAA /* CoordinateTransformationLibrary */; };
 		A7BCD27C258A318F00CB62C6 /* MobilApp_LABCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */; };
 		A7BCD27E258A318F00CB62C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD27D258A318F00CB62C6 /* ContentView.swift */; };
 		A7BCD280258A319300CB62C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BCD27F258A319300CB62C6 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69B022C2259128F3006EFAAA /* CoordinateTransformationLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +188,9 @@
 			dependencies = (
 			);
 			name = MobilApp_LABC;
+			packageProductDependencies = (
+				69B022C1259128F3006EFAAA /* CoordinateTransformationLibrary */,
+			);
 			productName = MobilApp_LABC;
 			productReference = A7BCD278258A318F00CB62C6 /* MobilApp_LABC.app */;
 			productType = "com.apple.product-type.application";
@@ -257,6 +262,9 @@
 				Base,
 			);
 			mainGroup = A7BCD26F258A318F00CB62C6;
+			packageReferences = (
+				69B022C0259128F3006EFAAA /* XCRemoteSwiftPackageReference "CoordinateTransformationLibrary" */,
+			);
 			productRefGroup = A7BCD279258A318F00CB62C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -628,6 +636,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		69B022C0259128F3006EFAAA /* XCRemoteSwiftPackageReference "CoordinateTransformationLibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Oops-AB/CoordinateTransformationLibrary.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		69B022C1259128F3006EFAAA /* CoordinateTransformationLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69B022C0259128F3006EFAAA /* XCRemoteSwiftPackageReference "CoordinateTransformationLibrary" */;
+			productName = CoordinateTransformationLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A7BCD270258A318F00CB62C6 /* Project object */;
 }
