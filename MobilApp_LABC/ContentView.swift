@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var showFullMap = false
     var body: some View {
         VStack{
-            ZStack(alignment: .leading) {
+            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
                 Text("ParkMate")
                     .foregroundColor(.black)
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
@@ -21,7 +21,7 @@ struct ContentView: View {
                 .clipShape(Circle())
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-                .frame(width: 200, height: 200)
+                .frame(width: 300, height: 300)
                 .onTapGesture {
                     showFullMap = true
                 }
