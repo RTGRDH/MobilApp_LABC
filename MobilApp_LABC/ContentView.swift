@@ -14,7 +14,7 @@ struct ContentView: View {
         VStack{
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
                 Text("ParkMate")
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("text"))
                     .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             }
             MapView(automater:controller.getAutomater())
@@ -25,17 +25,18 @@ struct ContentView: View {
                 .onTapGesture {
                     showFullMap = true
                 }
-            Divider()
-                .foregroundColor(.black)
         }
-        .background(Color(red: 245/255, green: 1/255, blue: 121/255).opacity(0.5))
+        .offset(x: 0, y: -80)
+        .frame(width: 450, height: 600)
+        .background(LinearGradient(gradient: Gradient(colors: [Color("specialPink"), Color("accent")]), startPoint: .top, endPoint: .bottom))
+        .edgesIgnoringSafeArea(.all)
         Spacer()
         VStack {
-            Button("I have parked"){
+            Button("Hitta Automater"){
                 controller.fetch()
             }
             .font(.largeTitle)
-            .foregroundColor(Color(red: 12/255, green: 245/255, blue: 145/255))
+            .foregroundColor(Color("specialText"))
         }
         .sheet(isPresented: $showFullMap){
             MapPressedView(automater: controller.getAutomater())
