@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var controller = Controller()
     @State private var showFullMap = false
-    @State private var shake = 2
+    @State var selectedAnnotation:PAutomat?
     var body: some View {
         VStack{
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
@@ -18,7 +18,7 @@ struct ContentView: View {
                     .foregroundColor(Color("text"))
                     .shadow(radius: 10)
             }
-            MapView(automater:controller.getAutomater())
+            MapView(selectedAnnotation: $selectedAnnotation, automater:controller.getAutomater())
                 .clipShape(Circle())
                 .shadow(radius: 10)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))

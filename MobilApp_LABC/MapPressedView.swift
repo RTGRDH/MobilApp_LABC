@@ -10,9 +10,10 @@ import SwiftUI
 struct MapPressedView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var automater: [PAutomat]
+    @State var selectedAnnotation:PAutomat?
     var body: some View {
         NavigationView{
-            MapView(automater: automater)
+            MapView(selectedAnnotation: $selectedAnnotation, automater: automater)
                 .edgesIgnoringSafeArea(.all)
                 .navigationBarItems(trailing: Button("Return"){
                     self.presentationMode.wrappedValue.dismiss()
@@ -20,9 +21,10 @@ struct MapPressedView: View {
         }
     }
 }
-
+/*
 struct MapPressedView_Previews: PreviewProvider {
     static var previews: some View {
         MapPressedView(automater: [])
     }
 }
+*/
