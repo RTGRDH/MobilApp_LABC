@@ -10,16 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var controller = Controller()
     @State private var showFullMap = false
+    @State private var shake = 2
     var body: some View {
         VStack{
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
                 Text("ParkMate")
                     .foregroundColor(Color("text"))
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 10)
             }
             MapView(automater:controller.getAutomater())
                 .clipShape(Circle())
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                .shadow(radius: 10)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                 .frame(width: 300, height: 300)
                 .onTapGesture {
@@ -34,6 +35,7 @@ struct ContentView: View {
         VStack {
             Button("Hitta Automater"){
                 controller.fetch()
+                shake+=1
             }
             .font(.largeTitle)
             .foregroundColor(Color("specialText"))
