@@ -18,11 +18,13 @@ struct MapView: UIViewRepresentable{
         init(_ parent:MapView) {
             self.parent = parent
         }
+        /*
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
             let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
             view.canShowCallout = true
             return view
         }
+ */
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
