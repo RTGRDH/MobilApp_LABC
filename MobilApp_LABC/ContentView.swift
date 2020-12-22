@@ -25,10 +25,9 @@ struct ContentView: View {
                 .onTapGesture {
                     showFullMap = true
                 }
-            //Divider()
-                //.foregroundColor(.black)
         }
-        .frame(width: 450, height: 450)
+        .offset(x: 0, y: -80)
+        .frame(width: 450, height: 600)
         .background(LinearGradient(gradient: Gradient(colors: [Color("specialPink"), Color("accent")]), startPoint: .top, endPoint: .bottom))
         .edgesIgnoringSafeArea(.all)
         Spacer()
