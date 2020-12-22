@@ -8,6 +8,27 @@
 import SwiftUI
 import MapKit
 struct MapView: UIViewRepresentable{
+    /*
+     Class to respond to activity from methods in the MapView.
+     This class is an delegate of the MapView, when something happens in MapView, the Coordinator gets notified.
+     https://www.hackingwithswift.com/books/ios-swiftui/communicating-with-a-mapkit-coordinator
+     */
+    class Coordinator:NSObject, MKMapViewDelegate{
+        var parent: MapView
+        init(_ parent:MapView) {
+            self.parent = parent
+        }
+        /*
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
+            view.canShowCallout = true
+            return view
+        }
+ */
+    }
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
     var automater:[PAutomat]
     var locationManager = CLLocationManager()
     func setupManager() {
@@ -22,6 +43,7 @@ struct MapView: UIViewRepresentable{
         let mapView = MKMapView(frame: UIScreen.main.bounds)
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
+        mapView.delegate = context.coordinator
         return mapView
     }
     
