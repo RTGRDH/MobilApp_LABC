@@ -50,11 +50,10 @@ class fetchFunctions{
                     }
                     NotificationCenter.default.post(name: Notification.Name(rawValue: myNotificationKey), object: nil)
                 }else{
-                    print("Wtf")
+                    print("Unable to decode")
                 }
-                //NotificationCenter.default.post(name: Notification.Name(rawValue: myNotificationKey), object: nil)
             }else{
-                print("Ingen data")
+                print("No data")
             }
         }.resume()
         
