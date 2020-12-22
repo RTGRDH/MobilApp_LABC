@@ -29,7 +29,7 @@ struct ContentView: View {
                 //.foregroundColor(.black)
         }
         .frame(width: 450, height: 450)
-        .background(LinearGradient(gradient: Gradient(colors: [Color(red: 245/255, green: 1/255, blue: 121/255).opacity(0.5), Color("accent")]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("specialPink"), Color("accent")]), startPoint: .top, endPoint: .bottom))
         .edgesIgnoringSafeArea(.all)
         Spacer()
         VStack {
