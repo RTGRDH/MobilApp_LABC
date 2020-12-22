@@ -9,31 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var controller = Controller()
+    @State private var showFullMap = false
     var body: some View {
         VStack{
-            Text("ParkMate")
-                .foregroundColor(.black)
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            ZStack(alignment: .leading) {
+                Text("ParkMate")
+                    .foregroundColor(.black)
+                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            }
             MapView(automater:controller.getAutomater())
                 .clipShape(Circle())
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                 .frame(width: 200, height: 200)
+                .onTapGesture {
+                    showFullMap = true
+                }
             Divider()
                 .foregroundColor(.black)
-                .padding()
         }
-        .background(Color.pink)
-        .ignoresSafeArea()
+        .background(Color(red: 245/255, green: 1/255, blue: 121/255).opacity(0.5))
         Spacer()
-        Button("Test"){
-            print(controller.getAutomater().count)
-        }
-        Button("I have parked"){
-            controller.fetch()
-        }
+        VStack {
+            Button("I have parked"){
+                controller.fetch()
+            }
             .font(.largeTitle)
-            .foregroundColor(.green)
+            .foregroundColor(Color(red: 12/255, green: 245/255, blue: 145/255))
+        }
+        .sheet(isPresented: $showFullMap){
+            MapPressedView(automater: controller.getAutomater())
+        }
     }
 }
 

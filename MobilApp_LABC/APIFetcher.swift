@@ -41,7 +41,7 @@ class fetchFunctions{
                         //let test = CLLocation(latitude: 59.337193842903424
                                               //, longitude: 17.9386777235112)
                         let automat = CLLocation(latitude: automatPosWGS84.latitude, longitude: automatPosWGS84.longitude)
-                        if(myLocation.distance(from: automat) < /*1000*/ .infinity){
+                        if(myLocation.distance(from: automat) < .infinity){
                             let naraAutomat = PAutomat(adress: feature.properties.adressbeskrivning, coordinate: CLLocationCoordinate2D(latitude: automat.coordinate.latitude, longitude: automat.coordinate.longitude), status: feature.properties.status.rawValue, pris: 100)
                             resultFromApi.append(naraAutomat)
                         }
@@ -50,11 +50,10 @@ class fetchFunctions{
                     }
                     NotificationCenter.default.post(name: Notification.Name(rawValue: myNotificationKey), object: nil)
                 }else{
-                    print("Wtf")
+                    print("Unable to decode")
                 }
-                //NotificationCenter.default.post(name: Notification.Name(rawValue: myNotificationKey), object: nil)
             }else{
-                print("Ingen data")
+                print("No data")
             }
         }.resume()
         
