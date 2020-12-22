@@ -19,7 +19,7 @@ struct MapView: UIViewRepresentable{
             self.parent = parent
         }
         
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        /*func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
             let identifier = "Placemark"
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             if(annotationView == nil){
@@ -31,7 +31,7 @@ struct MapView: UIViewRepresentable{
                 annotationView?.annotation = annotation
             }
             return annotationView
-        }
+        }*/
  
  
     }
@@ -62,6 +62,7 @@ struct MapView: UIViewRepresentable{
 }
 
 struct MapView_Previews: PreviewProvider {
-    static var previews: some View {        MapView(automater: [])
+    static var previews: some View {
+        MapView(automater: [])
     }
 }
