@@ -32,7 +32,7 @@ struct DetailsView: View {
                     .font(.largeTitle)
                     .foregroundColor(Color("accent"))
                     .offset(x: 0, y: 50)
-                Rectangle().frame(width: 280, height: 2, alignment: .center)
+                Rectangle().frame(width: 285, height: 2, alignment: .center)
                     .offset(x: 0, y: 30)
                     .foregroundColor(Color("accent"))
                 Spacer()
@@ -40,7 +40,7 @@ struct DetailsView: View {
                     Text("Adress: ")
                         .font(.title)
                         .foregroundColor(Color("accent"))
-                        + Text("\(selectedAnnotation?.title ?? "Okänd Adress")")
+                    + Text("\(selectedAnnotation?.title ?? "Okänd Adress")")
                         .font(.title)
                         .foregroundColor(Color("accent"))
                     Text("Status: ")
@@ -70,7 +70,7 @@ struct DetailsView: View {
                     }
                     .buttonStyle(niceButton())
                     Button("Vägbeskrivning"){
-                        print(selectedAnnotation?.title)
+                        print(selectedAnnotation?.title ?? "Okänd Adress")
                     }
                     .buttonStyle(niceButton())
                     Button("Öppna Applikation"){

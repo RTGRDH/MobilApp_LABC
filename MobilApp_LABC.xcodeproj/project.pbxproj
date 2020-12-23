@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		691633872592337900AD5718 /* MapPressedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691633862592337900AD5718 /* MapPressedView.swift */; };
+		69378D5E2593FFA40055536F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69378D5D2593FFA40055536F /* LoadingView.swift */; };
 		6972E820259103F6000BD3A5 /* PAutomatStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */; };
 		69977E692593AB4B0017753C /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69977E682593AB4B0017753C /* Styles.swift */; };
 		69977E6E2593B1340017753C /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69977E6D2593B1340017753C /* DetailsView.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		691633862592337900AD5718 /* MapPressedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPressedView.swift; sourceTree = "<group>"; };
+		69378D5D2593FFA40055536F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAutomatStruct.swift; sourceTree = "<group>"; };
 		69977E682593AB4B0017753C /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		69977E6D2593B1340017753C /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				A7BCD27D258A318F00CB62C6 /* ContentView.swift */,
 				69977E6D2593B1340017753C /* DetailsView.swift */,
 				691633862592337900AD5718 /* MapPressedView.swift */,
+				69378D5D2593FFA40055536F /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				691633872592337900AD5718 /* MapPressedView.swift in Sources */,
 				69977E692593AB4B0017753C /* Styles.swift in Sources */,
 				A7BCD2BF258A333800CB62C6 /* PAutomat.swift in Sources */,
+				69378D5E2593FFA40055536F /* LoadingView.swift in Sources */,
 				A7BCD2BA258A330600CB62C6 /* Controller.swift in Sources */,
 				69977E6E2593B1340017753C /* DetailsView.swift in Sources */,
 				A7BCD27E258A318F00CB62C6 /* ContentView.swift in Sources */,

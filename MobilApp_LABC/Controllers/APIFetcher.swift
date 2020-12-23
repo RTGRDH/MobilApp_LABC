@@ -38,11 +38,9 @@ class fetchFunctions{
                         let automatPosWGS84 = automatPos.toWGS84()
                         print(automatPosWGS84.latitude)
                         print(automatPosWGS84.longitude)
-                        //let test = CLLocation(latitude: 59.337193842903424
-                                              //, longitude: 17.9386777235112)
                         let automat = CLLocation(latitude: automatPosWGS84.latitude, longitude: automatPosWGS84.longitude)
                         if(myLocation.distance(from: automat) < .infinity){
-                            let naraAutomat = PAutomat(adress: feature.properties.adressbeskrivning, coordinate: CLLocationCoordinate2D(latitude: automat.coordinate.latitude, longitude: automat.coordinate.longitude), status: feature.properties.status.rawValue, pris: 100)
+                            let naraAutomat = PAutomat(adress: feature.properties.adressbeskrivning, coordinate: CLLocationCoordinate2D(latitude: automat.coordinate.latitude, longitude: automat.coordinate.longitude), status: feature.properties.status.rawValue, pris: Double.random(in: 1...300))
                             resultFromApi.append(naraAutomat)
                         }
                         //Long Lat Alt (Y X ALT)
