@@ -11,6 +11,8 @@ struct ContentView: View {
     @ObservedObject var controller = Controller()
     @State private var showFullMap = false
     @State var selectedAnnotation:PAutomat?
+    private let timer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
+    @State private var shake = false
     var body: some View {
         VStack{
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
@@ -35,11 +37,15 @@ struct ContentView: View {
         VStack {
             Button("Hitta Automater"){
                 controller.fetch()
-                shake+=1
             }
             .font(.largeTitle)
             .foregroundColor(Color("specialText"))
         }
+        //.offset(x: shake ? -5 : 0)
+        //.animation(Animation.default.repeatCount(5).speed(5))
+        .onReceive(timer, perform: { _ in
+            self.shake.toggle()
+        })
         .sheet(isPresented: $showFullMap){
             MapPressedView(automater: controller.getAutomater())
         }
