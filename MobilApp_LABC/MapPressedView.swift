@@ -13,19 +13,17 @@ struct MapPressedView: View {
     @State var selectedAnnotation:PAutomat?
     @Binding var showingDetails:Bool
     var body: some View {
-        NavigationView{
-            MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, automater: automater)
-                .edgesIgnoringSafeArea(.all)
-                .navigationBarItems(trailing: Button("Return"){
-                    self.presentationMode.wrappedValue.dismiss()
-                }).foregroundColor(.blue)
+        MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, automater: automater)
+            .edgesIgnoringSafeArea(.all)
+        .sheet(isPresented: $showingDetails){
+            DetailsView(selectedAnnotation: selectedAnnotation, showDetails: $showingDetails)
         }
     }
 }
-/*
+
 struct MapPressedView_Previews: PreviewProvider {
     static var previews: some View {
-        MapPressedView(automater: [])
+        MapPressedView(automater: [], showingDetails: .constant(false))
     }
 }
-*/
+

@@ -10,8 +10,8 @@
 		691633872592337900AD5718 /* MapPressedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691633862592337900AD5718 /* MapPressedView.swift */; };
 		6972E820259103F6000BD3A5 /* PAutomatStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */; };
 		69977E692593AB4B0017753C /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69977E682593AB4B0017753C /* Styles.swift */; };
+		69977E6E2593B1340017753C /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69977E6D2593B1340017753C /* DetailsView.swift */; };
 		69B022C2259128F3006EFAAA /* CoordinateTransformationLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 69B022C1259128F3006EFAAA /* CoordinateTransformationLibrary */; };
-		A7A783E825928D9C00ACE44B /* PAutomatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A783E725928D9C00ACE44B /* PAutomatDetailView.swift */; };
 		A7BCD27C258A318F00CB62C6 /* MobilApp_LABCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */; };
 		A7BCD27E258A318F00CB62C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD27D258A318F00CB62C6 /* ContentView.swift */; };
 		A7BCD280258A319300CB62C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BCD27F258A319300CB62C6 /* Assets.xcassets */; };
@@ -47,7 +47,7 @@
 		691633862592337900AD5718 /* MapPressedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPressedView.swift; sourceTree = "<group>"; };
 		6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAutomatStruct.swift; sourceTree = "<group>"; };
 		69977E682593AB4B0017753C /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		A7A783E725928D9C00ACE44B /* PAutomatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAutomatDetailView.swift; sourceTree = "<group>"; };
+		69977E6D2593B1340017753C /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		A7BCD278258A318F00CB62C6 /* MobilApp_LABC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilApp_LABC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilApp_LABCApp.swift; sourceTree = "<group>"; };
 		A7BCD27D258A318F00CB62C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,9 +120,9 @@
 				A7BCD2C9258A337200CB62C6 /* Models */,
 				A7BCD2C3258A334200CB62C6 /* Controllers */,
 				A7BCD2A9258A320C00CB62C6 /* MapView.swift */,
-				A7A783E725928D9C00ACE44B /* PAutomatDetailView.swift */,
 				A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */,
 				A7BCD27D258A318F00CB62C6 /* ContentView.swift */,
+				69977E6D2593B1340017753C /* DetailsView.swift */,
 				69977E682593AB4B0017753C /* Styles.swift */,
 				691633862592337900AD5718 /* MapPressedView.swift */,
 				A7BCD2BE258A333800CB62C6 /* PAutomat.swift */,
@@ -314,11 +314,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				691633872592337900AD5718 /* MapPressedView.swift in Sources */,
-				A7A783E825928D9C00ACE44B /* PAutomatDetailView.swift in Sources */,
 				A7BCD2C5258A336100CB62C6 /* ParkDataModel.swift in Sources */,
 				69977E692593AB4B0017753C /* Styles.swift in Sources */,
 				A7BCD2BF258A333800CB62C6 /* PAutomat.swift in Sources */,
 				A7BCD2BA258A330600CB62C6 /* Controller.swift in Sources */,
+				69977E6E2593B1340017753C /* DetailsView.swift in Sources */,
 				A7BCD2AF258A32F700CB62C6 /* MapController.swift in Sources */,
 				A7BCD27E258A318F00CB62C6 /* ContentView.swift in Sources */,
 				A7BCD2AA258A320C00CB62C6 /* MapView.swift in Sources */,
