@@ -63,7 +63,6 @@ struct MapView: UIViewRepresentable{
                 print(self.selectedAnnotation?.title ?? "Unknown Address")
                 print(self.selectedAnnotation?.status ?? "Unknown Status")
                 self.parent.showingDetails = true
-                
             }
         }
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -109,10 +108,10 @@ struct MapView: UIViewRepresentable{
     }*/
     
 }
-/*
+
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(selectedAutomat: Binding<PAutomat?>, automater: [])
+        MapView(showingDetails: .constant(false), selectedAnnotation: .constant(PAutomat(adress: "Testvägen 7", coordinate: CLLocationCoordinate2D(latitude: 50, longitude: 20), status: "I Drift", pris: 132)), automater: [])
     }
 }
- */
+ 
