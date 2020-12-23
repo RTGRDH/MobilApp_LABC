@@ -19,13 +19,16 @@ struct DetailsView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var selectedAnnotation: PAutomat?
     @Binding var showDetails: Bool
-    @State var isError = false
+    @State var statusColor: Color = .red
     
     private func checkColor(status: String){
         if(status == "I Drift"){
-            isError = false
-        }else{
-            isError = true
+            statusColor = .green
+        }else if(status == "Planerad"){
+            statusColor = .yellow
+        }
+        else{
+            statusColor = .red
         }
     }
     
@@ -49,7 +52,7 @@ struct DetailsView: View {
                         .foregroundColor(Color("accent"))
                     + Text("\(selectedAnnotation?.status ?? "Okänd Status")")
                         .font(.title)
-                        .foregroundColor(isError ? .red : .green)
+                        .foregroundColor(statusColor)
                     Text("Pris: ")
                         .font(.title)
                         .foregroundColor(Color("accent"))
