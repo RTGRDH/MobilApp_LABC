@@ -18,6 +18,7 @@ struct ContentView: View {
             VStack{
                 VStack{
                     Text("ParkMate")
+                        .foregroundColor(Color("text"))
                     NavigationLink(destination: MapPressedView(automater: controller.getAutomater(), showingDetails: $showingDetails)){
                         MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, automater:controller.getAutomater())
                             .clipShape(Circle())

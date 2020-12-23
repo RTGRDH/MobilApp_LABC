@@ -12,6 +12,19 @@ struct DetailsView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var selectedAnnotation: PAutomat?
     @Binding var showDetails: Bool
+    @State var statusColor: Color = .red
+    
+    private func checkColor(status: String){
+        if(status == "I Drift"){
+            statusColor = .green
+        }else if(status == "Planerad"){
+            statusColor = .yellow
+        }
+        else{
+            statusColor = .red
+        }
+    }
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -19,6 +32,9 @@ struct DetailsView: View {
                     .font(.largeTitle)
                     .foregroundColor(Color("accent"))
                     .offset(x: 0, y: 50)
+                Rectangle().frame(width: 280, height: 2, alignment: .center)
+                    .offset(x: 0, y: 30)
+                    .foregroundColor(Color("accent"))
                 Spacer()
                 VStack(alignment: .leading, spacing: 50){
                     Text("Adress: ")
@@ -32,11 +48,11 @@ struct DetailsView: View {
                         .foregroundColor(Color("accent"))
                     + Text("\(selectedAnnotation?.status ?? "Okänd Status")")
                         .font(.title)
-                        .foregroundColor(.red)
+                        .foregroundColor(statusColor)
                     Text("Pris: ")
                         .font(.title)
                         .foregroundColor(Color("accent"))
-                        + Text("\(((selectedAnnotation?.pris ?? 100.0)!), specifier: "%.2f") KR")
+                        + Text("\(((selectedAnnotation?.pris ?? 100.0)!), specifier: "%.2f") KR/H")
                         .font(.title)
                         .foregroundColor(Color("accent"))
                     Text("Operatör: ")
@@ -48,7 +64,7 @@ struct DetailsView: View {
                 }
                 Spacer()
                 VStack {
-                    Button("Return"){
+                    Button("Returnera"){
                         showDetails = false
                         self.presentationMode.wrappedValue.dismiss()
                     }
@@ -67,12 +83,15 @@ struct DetailsView: View {
             }
             .background(LinearGradient(gradient: Gradient(colors: [Color("specialPink"), Color("accent")]), startPoint: .top, endPoint: .bottom))
             .edgesIgnoringSafeArea(.all)
-        }
+        }.onAppear(perform: {
+            checkColor(status: selectedAnnotation?.status ?? "Okänd Status")
+        })
     }
 }
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsView(selectedAnnotation: PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0), showDetails: .constant(true))
+        
     }
 }
