@@ -36,7 +36,7 @@ struct DetailsView: View {
                     Text("Pris: ")
                         .font(.title)
                         .foregroundColor(Color("accent"))
-                        + Text("\(((selectedAnnotation?.pris!)!), specifier: "%.2f") KR")
+                        + Text("\(((selectedAnnotation?.pris ?? 100.0)!), specifier: "%.2f") KR")
                         .font(.title)
                         .foregroundColor(Color("accent"))
                     Text("Operatör: ")

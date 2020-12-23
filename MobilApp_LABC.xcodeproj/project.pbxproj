@@ -19,10 +19,8 @@
 		A7BCD28E258A319400CB62C6 /* MobilApp_LABCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD28D258A319400CB62C6 /* MobilApp_LABCTests.swift */; };
 		A7BCD299258A319400CB62C6 /* MobilApp_LABCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD298258A319400CB62C6 /* MobilApp_LABCUITests.swift */; };
 		A7BCD2AA258A320C00CB62C6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD2A9258A320C00CB62C6 /* MapView.swift */; };
-		A7BCD2AF258A32F700CB62C6 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD2AE258A32F700CB62C6 /* MapController.swift */; };
 		A7BCD2BA258A330600CB62C6 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD2B9258A330600CB62C6 /* Controller.swift */; };
 		A7BCD2BF258A333800CB62C6 /* PAutomat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD2BE258A333800CB62C6 /* PAutomat.swift */; };
-		A7BCD2C5258A336100CB62C6 /* ParkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD2C4258A336100CB62C6 /* ParkDataModel.swift */; };
 		A7BCD2CB258A33A000CB62C6 /* APIFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD2CA258A33A000CB62C6 /* APIFetcher.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,10 +59,8 @@
 		A7BCD298258A319400CB62C6 /* MobilApp_LABCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilApp_LABCUITests.swift; sourceTree = "<group>"; };
 		A7BCD29A258A319400CB62C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7BCD2A9258A320C00CB62C6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		A7BCD2AE258A32F700CB62C6 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		A7BCD2B9258A330600CB62C6 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		A7BCD2BE258A333800CB62C6 /* PAutomat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAutomat.swift; sourceTree = "<group>"; };
-		A7BCD2C4258A336100CB62C6 /* ParkDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkDataModel.swift; sourceTree = "<group>"; };
 		A7BCD2CA258A33A000CB62C6 /* APIFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +90,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69FB48412593D3C8000000D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7BCD2A9258A320C00CB62C6 /* MapView.swift */,
+				A7BCD27D258A318F00CB62C6 /* ContentView.swift */,
+				69977E6D2593B1340017753C /* DetailsView.swift */,
+				691633862592337900AD5718 /* MapPressedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A7BCD26F258A318F00CB62C6 = {
 			isa = PBXGroup;
 			children = (
@@ -117,17 +124,11 @@
 		A7BCD27A258A318F00CB62C6 /* MobilApp_LABC */ = {
 			isa = PBXGroup;
 			children = (
+				69FB48412593D3C8000000D2 /* Views */,
 				A7BCD2C9258A337200CB62C6 /* Models */,
 				A7BCD2C3258A334200CB62C6 /* Controllers */,
-				A7BCD2A9258A320C00CB62C6 /* MapView.swift */,
 				A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */,
-				A7BCD27D258A318F00CB62C6 /* ContentView.swift */,
-				69977E6D2593B1340017753C /* DetailsView.swift */,
 				69977E682593AB4B0017753C /* Styles.swift */,
-				691633862592337900AD5718 /* MapPressedView.swift */,
-				A7BCD2BE258A333800CB62C6 /* PAutomat.swift */,
-				6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */,
-				A7BCD2CA258A33A000CB62C6 /* APIFetcher.swift */,
 				A7BCD27F258A319300CB62C6 /* Assets.xcassets */,
 				A7BCD284258A319300CB62C6 /* Info.plist */,
 				A7BCD281258A319300CB62C6 /* Preview Content */,
@@ -164,8 +165,8 @@
 		A7BCD2C3258A334200CB62C6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A7BCD2AE258A32F700CB62C6 /* MapController.swift */,
 				A7BCD2B9258A330600CB62C6 /* Controller.swift */,
+				A7BCD2CA258A33A000CB62C6 /* APIFetcher.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,7 +174,8 @@
 		A7BCD2C9258A337200CB62C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A7BCD2C4258A336100CB62C6 /* ParkDataModel.swift */,
+				A7BCD2BE258A333800CB62C6 /* PAutomat.swift */,
+				6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,12 +316,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				691633872592337900AD5718 /* MapPressedView.swift in Sources */,
-				A7BCD2C5258A336100CB62C6 /* ParkDataModel.swift in Sources */,
 				69977E692593AB4B0017753C /* Styles.swift in Sources */,
 				A7BCD2BF258A333800CB62C6 /* PAutomat.swift in Sources */,
 				A7BCD2BA258A330600CB62C6 /* Controller.swift in Sources */,
 				69977E6E2593B1340017753C /* DetailsView.swift in Sources */,
-				A7BCD2AF258A32F700CB62C6 /* MapController.swift in Sources */,
 				A7BCD27E258A318F00CB62C6 /* ContentView.swift in Sources */,
 				A7BCD2AA258A320C00CB62C6 /* MapView.swift in Sources */,
 				A7BCD2CB258A33A000CB62C6 /* APIFetcher.swift in Sources */,
