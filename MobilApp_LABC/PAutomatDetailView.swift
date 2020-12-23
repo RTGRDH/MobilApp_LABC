@@ -10,6 +10,7 @@ import SwiftUI
 struct PAutomatDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var automat:PAutomat
+    //@Binding var showingDetails:Bool
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }

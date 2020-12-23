@@ -11,6 +11,7 @@ struct ContentView: View {
     @ObservedObject var controller = Controller()
     @State private var showFullMap = false
     @State var selectedAnnotation:PAutomat?
+    @State var showingDetails = false
     private let timer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
     @State private var shake = false
     var body: some View {
@@ -20,7 +21,7 @@ struct ContentView: View {
                     .foregroundColor(Color("text"))
                     .shadow(radius: 10)
             }
-            MapView(selectedAnnotation: $selectedAnnotation, automater:controller.getAutomater())
+            MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, automater:controller.getAutomater())
                 .clipShape(Circle())
                 .shadow(radius: 10)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
@@ -47,13 +48,14 @@ struct ContentView: View {
             self.shake.toggle()
         })
         .sheet(isPresented: $showFullMap){
-            MapPressedView(automater: controller.getAutomater())
+            MapPressedView(automater: controller.getAutomater(), showingDetails: $showingDetails)
         }
     }
 }
-
+/*
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(showingDetails: )
     }
 }
+*/

@@ -72,7 +72,7 @@ class Coordinator:NSObject, MKMapViewDelegate{
 */
 }
 struct MapView: UIViewRepresentable{
-    @State var showingDetails = false
+    @Binding var showingDetails:Bool
     @Binding var selectedAnnotation:PAutomat?
     /*
      Class to respond to activity from methods in the MapView.
@@ -104,9 +104,10 @@ struct MapView: UIViewRepresentable{
         uiView.removeAnnotations(automater)
         uiView.addAnnotations(automater)
         if let selectedAnnotation = selectedAnnotation{
-            uiView.selectAnnotation(selectedAnnotation, animated: true)
+            uiView.selectAnnotation(selectedAnnotation, animated: false)
+            showingDetails = true
+            print(showingDetails)
         }
-        //PAutomatDetailView(automat: selectedAnnotation ?? PAutomat)
     }
     func getAnnotation() -> PAutomat{
         return selectedAnnotation!

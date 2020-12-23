@@ -11,9 +11,10 @@ struct MapPressedView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var automater: [PAutomat]
     @State var selectedAnnotation:PAutomat?
+    @Binding var showingDetails:Bool
     var body: some View {
         NavigationView{
-            MapView(selectedAnnotation: $selectedAnnotation, automater: automater)
+            MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, automater: automater)
                 .edgesIgnoringSafeArea(.all)
                 .navigationBarItems(trailing: Button("Return"){
                     self.presentationMode.wrappedValue.dismiss()
