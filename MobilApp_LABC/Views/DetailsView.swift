@@ -10,7 +10,7 @@ import MapKit
 
 struct DetailsView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var selectedAnnotation: PAutomat?
+    @Binding var selectedAnnotation: PAutomat?
     @Binding var showDetails: Bool
     @State var statusColor: Color = .red
     
@@ -91,7 +91,8 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(selectedAnnotation: PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0), showDetails: .constant(true))
+        DetailsView(selectedAnnotation: .constant(PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0)), showDetails: .constant(true))
         
     }
 }
+

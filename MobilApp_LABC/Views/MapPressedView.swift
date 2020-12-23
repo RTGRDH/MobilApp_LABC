@@ -16,7 +16,7 @@ struct MapPressedView: View {
         MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, automater: automater)
             .edgesIgnoringSafeArea(.all)
         .sheet(isPresented: $showingDetails){
-            DetailsView(selectedAnnotation: selectedAnnotation, showDetails: $showingDetails)
+            DetailsView(selectedAnnotation: $selectedAnnotation, showDetails: $showingDetails)
         }
     }
 }
