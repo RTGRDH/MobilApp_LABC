@@ -57,11 +57,13 @@ struct MapView: UIViewRepresentable{
     */
         
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
-            
-            parent.selectedAnnotation = view.annotation as? PAutomat
-            print(selectedAnnotation?.title ?? "Unknown Address")
-            print(selectedAnnotation?.status ?? "Unknown Status")
-            parent.showingDetails = true
+            OperationQueue.main.addOperation {
+                self.parent.selectedAnnotation = view.annotation as? PAutomat
+                print(self.selectedAnnotation?.title ?? "Unknown Address")
+                print(self.selectedAnnotation?.status ?? "Unknown Status")
+                self.parent.showingDetails = true
+                
+            }
         }
         func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
             
@@ -105,6 +107,7 @@ struct MapView: UIViewRepresentable{
     func updateUIView(_ uiView: MKMapView, context: Context) {
         uiView.removeAnnotations(automater)
         uiView.addAnnotations(automater)
+        //print(selectedAnnotation?.title)
     }
     func getAnnotation() -> PAutomat{
         return selectedAnnotation!

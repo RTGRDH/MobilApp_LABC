@@ -15,7 +15,7 @@ struct DetailsView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("ParkeringsAutomat")
+                Text("Parkerings Automat")
                     .font(.largeTitle)
                     .foregroundColor(Color("accent"))
                     .offset(x: 0, y: 50)
@@ -54,7 +54,7 @@ struct DetailsView: View {
                     }
                     .buttonStyle(niceButton())
                     Button("Vägbeskrivning"){
-                        print("Yeet")
+                        print(selectedAnnotation?.title)
                     }
                     .buttonStyle(niceButton())
                     Button("Öppna Applikation"){
