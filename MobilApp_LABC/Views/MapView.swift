@@ -35,7 +35,7 @@ struct MapView: UIViewRepresentable{
                if annotation is MKUserLocation {
                   return nil
                } else if annotation is PAutomat {
-                  annotationView.image =  UIImage(imageLiteralResourceName: "Pin")
+                  annotationView.image =  UIImage(imageLiteralResourceName: "PinImage")
                   return annotationView
                } else {
                   return nil
