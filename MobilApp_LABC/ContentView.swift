@@ -35,11 +35,31 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.all)
         Spacer()
         VStack {
-            Button("Hitta Automater"){
-                controller.fetch()
+            HStack {
+                Button("Hitta Automater"){
+                    controller.fetch()
+                }
+                .buttonStyle(niceButton())
+                //.font(.largeTitle)
+                //.foregroundColor(Color("specialText"))
+                /*Button("Test"){
+                    if let url = URL(string: "https://apps.apple.com/se/app/betala-p/id739699373") {
+                          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                       }
+                }*/
             }
-            .font(.largeTitle)
-            .foregroundColor(Color("specialText"))
+            /*VStack {
+                Button("Vägbeskrivning"){
+                    print("Yeet")
+                }
+                .buttonStyle(niceButton())
+                Button("Öppna Applikation"){
+                    if let url = URL(string: "https://apps.apple.com/se/app/betala-p/id739699373") {
+                          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                       }
+                }
+                .buttonStyle(niceButton())
+            }*/
         }
         //.offset(x: shake ? -5 : 0)
         //.animation(Animation.default.repeatCount(5).speed(5))
@@ -51,6 +71,8 @@ struct ContentView: View {
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
