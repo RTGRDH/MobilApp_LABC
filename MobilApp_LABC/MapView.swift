@@ -51,8 +51,8 @@ class Coordinator:NSObject, MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
         
         selectedAnnotation = view.annotation as? PAutomat
-        print(selectedAnnotation?.title!)
-        print(selectedAnnotation?.status!)
+        print(selectedAnnotation?.title ?? "Unknown Address")
+        print(selectedAnnotation?.status ?? "Unknown Status")
         
     }
 /*

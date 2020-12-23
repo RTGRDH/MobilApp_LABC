@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		691633872592337900AD5718 /* MapPressedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691633862592337900AD5718 /* MapPressedView.swift */; };
 		6972E820259103F6000BD3A5 /* PAutomatStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */; };
+		69977E692593AB4B0017753C /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69977E682593AB4B0017753C /* Styles.swift */; };
 		69B022C2259128F3006EFAAA /* CoordinateTransformationLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 69B022C1259128F3006EFAAA /* CoordinateTransformationLibrary */; };
 		A7A783E825928D9C00ACE44B /* PAutomatDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A783E725928D9C00ACE44B /* PAutomatDetailView.swift */; };
 		A7BCD27C258A318F00CB62C6 /* MobilApp_LABCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		691633862592337900AD5718 /* MapPressedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPressedView.swift; sourceTree = "<group>"; };
 		6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAutomatStruct.swift; sourceTree = "<group>"; };
+		69977E682593AB4B0017753C /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		A7A783E725928D9C00ACE44B /* PAutomatDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAutomatDetailView.swift; sourceTree = "<group>"; };
 		A7BCD278258A318F00CB62C6 /* MobilApp_LABC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilApp_LABC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilApp_LABCApp.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				A7A783E725928D9C00ACE44B /* PAutomatDetailView.swift */,
 				A7BCD27B258A318F00CB62C6 /* MobilApp_LABCApp.swift */,
 				A7BCD27D258A318F00CB62C6 /* ContentView.swift */,
+				69977E682593AB4B0017753C /* Styles.swift */,
 				691633862592337900AD5718 /* MapPressedView.swift */,
 				A7BCD2BE258A333800CB62C6 /* PAutomat.swift */,
 				6972E81F259103F6000BD3A5 /* PAutomatStruct.swift */,
@@ -313,6 +316,7 @@
 				691633872592337900AD5718 /* MapPressedView.swift in Sources */,
 				A7A783E825928D9C00ACE44B /* PAutomatDetailView.swift in Sources */,
 				A7BCD2C5258A336100CB62C6 /* ParkDataModel.swift in Sources */,
+				69977E692593AB4B0017753C /* Styles.swift in Sources */,
 				A7BCD2BF258A333800CB62C6 /* PAutomat.swift in Sources */,
 				A7BCD2BA258A330600CB62C6 /* Controller.swift in Sources */,
 				A7BCD2AF258A32F700CB62C6 /* MapController.swift in Sources */,
@@ -479,7 +483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MobilApp_LABC/Preview Content\"";
-				DEVELOPMENT_TEAM = TKM8762PGK;
+				DEVELOPMENT_TEAM = 67D223DW38;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MobilApp_LABC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -487,7 +491,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ernst.MobilApp-LABC";
+				PRODUCT_BUNDLE_IDENTIFIER = Parkmate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -501,7 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MobilApp_LABC/Preview Content\"";
-				DEVELOPMENT_TEAM = TKM8762PGK;
+				DEVELOPMENT_TEAM = 67D223DW38;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MobilApp_LABC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -509,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ernst.MobilApp-LABC";
+				PRODUCT_BUNDLE_IDENTIFIER = Parkmate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
