@@ -8,13 +8,6 @@
 import SwiftUI
 import MapKit
 
-/*enum Statuses: String {
-    let avstängd = "Avstängd"
-    let felanmäld = "Felanmäld"
-    let iDrift = "I Drift"
-    let planerad = "Planerad"
-}*/
-
 struct DetailsView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var selectedAnnotation: PAutomat?
@@ -56,7 +49,7 @@ struct DetailsView: View {
                     Text("Pris: ")
                         .font(.title)
                         .foregroundColor(Color("accent"))
-                        + Text("\(((selectedAnnotation?.pris ?? 100.0)!), specifier: "%.2f") KR")
+                        + Text("\(((selectedAnnotation?.pris ?? 100.0)!), specifier: "%.2f") KR/H")
                         .font(.title)
                         .foregroundColor(Color("accent"))
                     Text("Operatör: ")
@@ -68,7 +61,7 @@ struct DetailsView: View {
                 }
                 Spacer()
                 VStack {
-                    Button("Return"){
+                    Button("Returnera"){
                         showDetails = false
                         self.presentationMode.wrappedValue.dismiss()
                     }
@@ -95,9 +88,7 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            DetailsView(selectedAnnotation: PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0), showDetails: .constant(true))
-            DetailsView(selectedAnnotation: PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0), showDetails: .constant(true))
-        }
+        DetailsView(selectedAnnotation: PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0), showDetails: .constant(true))
+        
     }
 }
