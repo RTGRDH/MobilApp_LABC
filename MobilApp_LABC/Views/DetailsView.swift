@@ -32,6 +32,9 @@ struct DetailsView: View {
                     .font(.largeTitle)
                     .foregroundColor(Color("accent"))
                     .offset(x: 0, y: 50)
+                Rectangle().frame(width: 280, height: 2, alignment: .center)
+                    .offset(x: 0, y: 30)
+                    .foregroundColor(Color("accent"))
                 Spacer()
                 VStack(alignment: .leading, spacing: 50){
                     Text("Adress: ")
