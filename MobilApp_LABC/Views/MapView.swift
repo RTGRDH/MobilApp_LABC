@@ -10,6 +10,7 @@ import MapKit
 struct MapView: UIViewRepresentable{
     @Binding var showingDetails:Bool
     @Binding var selectedAnnotation:PAutomat?
+    let request = MKDirections.Request() //Request for direction
     /*
      Class to respond to activity from methods in the MapView.
      This class is an delegate of the MapView, when something happens in MapView, the Coordinator gets notified.
@@ -33,8 +34,8 @@ struct MapView: UIViewRepresentable{
                annotationView.canShowCallout = true
                if annotation is MKUserLocation {
                   return nil
-               } else if annotation is MapPin {
-                  //annotationView.image =  UIImage(imageLiteralResourceName: "Pin")
+               } else if annotation is PAutomat {
+                  annotationView.image =  UIImage(imageLiteralResourceName: "Pin")
                   return annotationView
                } else {
                   return nil
@@ -65,21 +66,12 @@ struct MapView: UIViewRepresentable{
                 
             }
         }
-    /*
-        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
-            if view.annotation is MKUserLocation {
-                return
-            }
-
-            let ibp = view.annotation as? PAutomat
-            print(ibp!.adress)
-            /*
-            ibp_id = (ibp?.court_id)!
-            IdentifierCell = "pin_IBP"
-            performSegue(withIdentifier: "map_ibp_info", sender: self)
-    */
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = .systemBlue
+            renderer.lineWidth = 5
+            return renderer
         }
-    */
     }
     func makeCoordinator() -> Coordinator {
         Coordinator(self,selectedAnnotation: $selectedAnnotation)
@@ -105,6 +97,17 @@ struct MapView: UIViewRepresentable{
         uiView.removeAnnotations(automater)
         uiView.addAnnotations(automater)
     }
+    /*
+    func calcDirection()
+    {
+        request.transportType = .walking
+        let directions = MKDirections(request: request)
+        directions.calculate{ response, error in
+            guard let route = response?.routes.first else{return}
+            locationManager.requestLocation()
+        }
+    }*/
+    
 }
 /*
 struct MapView_Previews: PreviewProvider {
