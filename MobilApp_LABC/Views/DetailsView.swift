@@ -12,6 +12,7 @@ struct DetailsView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var selectedAnnotation: PAutomat?
     @Binding var showDetails: Bool
+    @Binding var showRoute: Bool
     @State var statusColor: Color = .red
     
     private func checkColor(status: String){
@@ -70,7 +71,9 @@ struct DetailsView: View {
                     }
                     .buttonStyle(niceButton())
                     Button("Vägbeskrivning"){
+                        showRoute = true
                         print(selectedAnnotation?.title ?? "Okänd Adress")
+                        self.presentationMode.wrappedValue.dismiss()
                     }
                     .buttonStyle(niceButton())
                     Button("Öppna Applikation"){
@@ -91,7 +94,7 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(selectedAnnotation: .constant(PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0)), showDetails: .constant(true))
+        DetailsView(selectedAnnotation: .constant(PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0)), showDetails: .constant(true), showRoute: .constant(false))
         
     }
 }
