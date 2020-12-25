@@ -29,15 +29,29 @@ struct DetailsView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("Parkerings Automat")
-                    .font(.largeTitle)
-                    .foregroundColor(Color("accent"))
-                    .offset(x: 0, y: 50)
-                Rectangle().frame(width: 285, height: 2, alignment: .center)
-                    .offset(x: 0, y: 30)
-                    .foregroundColor(Color("accent"))
+                VStack{
+                    Text("Parkerings Automat")
+                        .font(.largeTitle)
+                        .foregroundColor(Color("accent"))
+                        .offset(x: 0, y: 50)
+                    Rectangle().frame(width: 285, height: 2, alignment: .center)
+                        .offset(x: 0, y: 30)
+                        .foregroundColor(Color("accent"))
+                }.offset(x: 0, y: -25)
                 Spacer()
-                VStack(alignment: .leading, spacing: 50){
+                HStack(alignment: .center){
+                    Image("Card")
+                        .resizable()
+                        .frame(width: 100, height: 60)
+                    if(selectedAnnotation?.cash == 1){
+                        Image("Cash")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            //.rotationEffect(.init(degrees: -13))
+                    }
+                }
+                Spacer()
+                VStack(alignment: .leading, spacing: 45){
                     Text("Adress: ")
                         .font(.title)
                         .foregroundColor(Color("accent"))
@@ -69,6 +83,7 @@ struct DetailsView: View {
                         .font(.title)
                         .foregroundColor(Color("accent"))
                 }
+                .offset(x: 0, y: -20)
                 Spacer()
                 VStack {
                     Button("Returnera"){
@@ -100,8 +115,7 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(selectedAnnotation: .constant(PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0, tax: 2)), showDetails: .constant(true), showRoute: .constant(false))
-        
+        DetailsView(selectedAnnotation: .constant(PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0, tax: 2, cash: 1)), showDetails: .constant(true), showRoute: .constant(false))
     }
 }
 
