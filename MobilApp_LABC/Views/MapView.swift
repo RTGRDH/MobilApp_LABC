@@ -113,21 +113,6 @@ struct MapView: UIViewRepresentable{
                   return nil
                }
             }
-        /*
-        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-            let identifier = "Pin"
-            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-            if annotationView == nil {
-                annotationView = MKPointAnnotationView(annotation: selectedAnnotation, reuseIdentifier: identifier)
-                annotationView?.canShowCallout = true
-                annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            }
-            else{
-                annotationView?.annotation = annotation
-            }
-            return annotationView
-        }
-    */
         
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
             OperationQueue.main.addOperation {

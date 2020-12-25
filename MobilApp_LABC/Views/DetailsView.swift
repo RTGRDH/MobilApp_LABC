@@ -47,7 +47,6 @@ struct DetailsView: View {
                         Image("Cash")
                             .resizable()
                             .frame(width: 60, height: 60)
-                            //.rotationEffect(.init(degrees: -13))
                     }
                 }
                 Spacer()

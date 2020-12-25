@@ -54,6 +54,5 @@ class fetchFunctions{
                 print("No data")
             }
         }.resume()
-        
     }
 }

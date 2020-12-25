@@ -7,7 +7,7 @@
 
 import SwiftUI
 /*
- Inspired by
+ Inspired/taken by
  https://www.appcoda.com/swiftui-button-style-animation/
  */
 struct niceButton: ButtonStyle {

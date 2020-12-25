@@ -19,8 +19,6 @@ struct ContentView: View {
                         Image("namnLogga")
                             .resizable()
                             .frame(width: 200, height: 90)
-                        //Text("ParkMate")
-                            //.foregroundColor(Color("text"))
                         NavigationLink(destination: MapPressedView(automater: controller.getAutomater(), showingDetails: $showingDetails)){
                             MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, showRoute: .constant(false), automater:controller.getAutomater())
                                 .clipShape(Circle())
