@@ -12,11 +12,23 @@ struct MapPressedView: View {
     @State var automater: [PAutomat]
     @State var selectedAnnotation:PAutomat?
     @Binding var showingDetails:Bool
+    @State var showRoute: Bool = false
     var body: some View {
-        MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, automater: automater)
+        ZStack{
+        MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, showRoute: $showRoute, automater: automater)
             .edgesIgnoringSafeArea(.all)
-        .sheet(isPresented: $showingDetails){
-            DetailsView(selectedAnnotation: $selectedAnnotation, showDetails: $showingDetails)
+            .sheet(isPresented: $showingDetails){
+                DetailsView(selectedAnnotation: $selectedAnnotation, showDetails: $showingDetails, showRoute: $showRoute)
+            }
+            if(showRoute){
+                Button("Avbryt Rutt"){
+                    print(showRoute)
+                    showRoute = false
+                }
+                .buttonStyle(niceButton())
+                .offset(x: 0, y: 285)
+                .frame(maxWidth: 250)
+            }
         }
     }
 }
