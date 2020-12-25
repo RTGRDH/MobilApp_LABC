@@ -144,7 +144,7 @@ struct MapView: UIViewRepresentable{
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(showingDetails: .constant(false), selectedAnnotation: .constant(PAutomat(adress: "Testvägen 7", coordinate: CLLocationCoordinate2D(latitude: 50, longitude: 20), status: "I Drift", pris: 132)), showRoute: .constant(false), automater: [])
+        MapView(showingDetails: .constant(false), selectedAnnotation: .constant(PAutomat(adress: "Testvägen 7", coordinate: CLLocationCoordinate2D(latitude: 50, longitude: 20), status: "I Drift", pris: 132, tax: 2)), showRoute: .constant(false), automater: [])
     }
 }
  

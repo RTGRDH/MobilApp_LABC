@@ -53,7 +53,13 @@ struct DetailsView: View {
                     Text("Pris: ")
                         .font(.title)
                         .foregroundColor(Color("accent"))
-                        + Text("\(((selectedAnnotation?.pris ?? 100.0)!), specifier: "%.2f") KR/H")
+                    + Text("\(((selectedAnnotation?.pris ?? 100.0)!), specifier: "%.2f") KR/H")
+                        .font(.title)
+                        .foregroundColor(Color("accent"))
+                    Text("Taxa typ: ")
+                        .font(.title)
+                        .foregroundColor(Color("accent"))
+                    + Text("\(selectedAnnotation?.tax ?? 0)")
                         .font(.title)
                         .foregroundColor(Color("accent"))
                     Text("Operatör: ")
@@ -94,7 +100,7 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(selectedAnnotation: .constant(PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0)), showDetails: .constant(true), showRoute: .constant(false))
+        DetailsView(selectedAnnotation: .constant(PAutomat(adress: "Svarta Backen 7", coordinate: CLLocationCoordinate2D(latitude: 51, longitude: 13), status: "I Drift", pris: 100.0, tax: 2)), showDetails: .constant(true), showRoute: .constant(false))
         
     }
 }
