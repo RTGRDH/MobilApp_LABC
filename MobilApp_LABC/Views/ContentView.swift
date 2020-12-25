@@ -11,15 +11,16 @@ struct ContentView: View {
     @ObservedObject var controller = Controller()
     @State var selectedAnnotation: PAutomat?
     @State var showingDetails = false
-    private let timer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
-    @State private var shake = false
     var body: some View {
         LoadingView(isShowing: .constant(controller.isLoading)) {
             NavigationView{
                 VStack{
                     VStack{
-                        Text("ParkMate")
-                            .foregroundColor(Color("text"))
+                        Image("namnLogga")
+                            .resizable()
+                            .frame(width: 200, height: 90)
+                        //Text("ParkMate")
+                            //.foregroundColor(Color("text"))
                         NavigationLink(destination: MapPressedView(automater: controller.getAutomater(), showingDetails: $showingDetails)){
                             MapView(showingDetails: $showingDetails, selectedAnnotation: $selectedAnnotation, showRoute: .constant(false), automater:controller.getAutomater())
                                 .clipShape(Circle())

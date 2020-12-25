@@ -16,6 +16,7 @@ struct MapView: UIViewRepresentable{
     
     var locationManager = CLLocationManager()
     var firstTime: Bool = true
+    @State var showingAnon: Bool = false
     @State var hasOverlay: Bool = false
     
     var automater:[PAutomat]
@@ -55,8 +56,11 @@ struct MapView: UIViewRepresentable{
     }*/
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        uiView.removeAnnotations(automater)
-        uiView.addAnnotations(automater)
+        if(!showingAnon){
+            uiView.removeAnnotations(automater)
+            uiView.addAnnotations(automater)
+            showingAnon = true
+        }
         if(!showRoute && hasOverlay){
             hasOverlay = false
             uiView.removeOverlays(uiView.overlays)
